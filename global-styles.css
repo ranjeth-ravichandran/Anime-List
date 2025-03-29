@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    align-items: center;
+    position: relative;
+    background-color: rgb(119, 134, 118);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('images/paper-grid.jpg') repeat center/cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.container {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#monkey1 {
+    position: absolute;
+    width: 80px;
+    transform: translateX(-40px) translateY(20px) rotate(-10deg);
+    animation: monkeyUpDown 3s infinite ease-in-out;
+}
+
+#banana1 {
+    position: absolute;
+    width: 80px;
+    transform: translateX(750px) translateY(20px);
+    animation: bananaUpDown 4s infinite ease-in-out;
+}
+
+@keyframes monkeyUpDown {
+
+    0%,
+    100% {
+        transform: translateX(-40px) translateY(0px) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateX(-40px) translateY(30px) rotate(-10deg);
+    }
+}
+
+@keyframes bananaUpDown {
+
+    0%,
+    100% {
+        transform: translateX(750px) translateY(0px);
+    }
+
+    50% {
+        transform: translateX(750px) translateY(30px);
+    }
+}
+
+h1 {
+    letter-spacing: 5px;
+    width: inherit;
+    font-size: 5rem;
+    color: white;
+    background-color: bisque;
+    text-align: center;
+    border-radius: 12px;
+    -webkit-text-stroke: 2px black;
+}
+
+h2 {
+    text-align: left;
+    font-size: 3rem;
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+
+.color-pallets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: bisque;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    text-align: center;
+    width: 130px;
+    font-size: 32px;
+    padding: 10px;
+    margin: 5px;
+    list-style: none;
+    border-radius: 4px;
+    font-family: "Patrick Hand", cursive;
+}
+
+li:hover {
+    transition: all ease-in-out 0.4s;
+    cursor: pointer;
+    outline: auto;
+    width: 100%;
+}
+
+.fonts {
+    background-color: bisque;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.fonts h2 {
+    font-size: 46px;
+}
+
+p {
+    font-family: "Patrick Hand", cursive;
+}
+
+:root {
+    --color1: #75DAD7;
+    --color2: #4EBCBA;
+    --color3: #279E9D;
+    --color4: #008080;
+    --color5: #006767;
+}
+
+.template {
+    background-color: var(--color1);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.template div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.template h2 {
+    width: fit-content;
+    color: var(--color5);
+    -webkit-text-stroke: 0;
+}
+
+.template button {
+    height: max-content;
+    font-size: 32px;
+    border-radius: 12px;
+    padding: 0 8px;
+    background-color: var(--color3);
+    border: none;
+    color: var(--color5);
+}
+
+.template button:hover {
+    transition: all ease-in-out 0.3s;
+    color: var(--color1);
+    background-color: var(--color5);
+    cursor: pointer;
+}
+
+.template p {
+    font-size: 32px;
+}
+
+.stroke {
+    user-select: none;
+    width: 50px;
+}
+
+.stroke:hover {
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    filter: drop-shadow(5px 0 0 white) drop-shadow(0 5px 0 white) drop-shadow(-5px 0 0 white) drop-shadow(0 -5px 0 white);
+}
