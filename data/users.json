@@ -1,0 +1,64 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "animeFan123",
+            "email": "animefan123@example.com",
+            "favorite_genres": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "watchlist": [
+                {
+                    "title": "Attack on Titan",
+                    "status": "Watching"
+                },
+                {
+                    "title": "One Piece",
+                    "status": "Plan to Watch"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "username": "otakuMaster",
+            "email": "otakumaster@example.com",
+            "favorite_genres": [
+                "Sci-Fi",
+                "Mecha",
+                "Drama"
+            ],
+            "watchlist": [
+                {
+                    "title": "Neon Genesis Evangelion",
+                    "status": "Completed"
+                },
+                {
+                    "title": "Steins;Gate",
+                    "status": "Watching"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "username": "chibiLover",
+            "email": "chibilover@example.com",
+            "favorite_genres": [
+                "Slice of Life",
+                "Romance",
+                "Comedy"
+            ],
+            "watchlist": [
+                {
+                    "title": "Your Lie in April",
+                    "status": "Completed"
+                },
+                {
+                    "title": "Clannad",
+                    "status": "Watching"
+                }
+            ]
+        }
+    ]
+}

@@ -4,31 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
+    <title>Anime List</title>
     <link rel="stylesheet" href="global-styles.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Hello World!</h1>
-        <img id="monkey1" src="images/monkey.png" alt="monkey">
-        <img id="banana1" src="images/banana.png" alt="monkey">
-        <div class="color-pallets">
-        </div>
-        <div class="fonts">
-            <h2>Quick brown fox jumps over the lazy dog</h2>
-            <p>Quick brown fox jumps over the lazy dog</p>
-        </div>
-        <div class="template">
-            <div>
-                <h2>Title</h2>
-                <button>Submit</button>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi ipsum hic consequatur neque numquam
-                ducimus necessitatibus nihil dolorum voluptas. Enim.</p>
-        </div>
-        <img class="stroke"
-            src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjIuODggMTEzLjQxIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzA2NWZkNDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmJsdWUtbGlrZS1idXR0b248L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQuMjksNDcuNjRoMTkuM0E0LjMxLDQuMzEsMCwwLDEsMjcuODgsNTJWMTA5LjFhNC4zMSw0LjMxLDAsMCwxLTQuMjksNC4zMUg0LjI5QTQuMzEsNC4zMSwwLDAsMSwwLDEwOS4xVjUyYTQuMzEsNC4zMSwwLDAsMSw0LjI5LTQuMzFaTTU5LDQuNzdjMi4yNy0xMS40OCwyMS4wNy0uOTEsMjIuMzEsMTcuNkE3OS44Miw3OS44MiwwLDAsMSw3OS42OCw0MmgyNi44N2MxMS4xNy40NCwyMC45Miw4LjQ0LDE0LDIxLjU4LDEuNTcsNS43MiwxLjgxLDEyLjQ0LTIuNDUsMTUuMDkuNTMsOS0yLDE0LjY0LTYuNjUsMTkuMDYtLjMxLDQuNTItMS4yNyw4LjUzLTMuNDUsMTEuNjItMy42MSw1LjA5LTYuNTQsMy44OC0xMi4yMiwzLjg4SDUwLjQ1Yy03LjE5LDAtMTEuMTEtMi0xNS44MS03Ljg4VjU0LjgxQzQ4LjE2LDUxLjE2LDU1LjM1LDMyLjY2LDU5LDIwLjUxVjQuNzdaIi8+PC9zdmc+">
+        <h1>Anime & Manga Tracker</h1>
+        <!-- 
+        <div class="user-container" id="userContainer"></div>
+        <div class="user-info" id="userInfo"></div> 
+        -->
+
+        <!-- TODO: Search bar -->
+        <input id="search-bar" placeholder="Search for Manga or Anime" />
+
+        <!-- TODO: Recommended Anime -->
+        <h2>Recommended <span>Anime</span></h2>
+        <div id="anime-list" class="list"></div>
+
+        <!-- TODO: Recommended Manga -->
+        <h2>Recommended <span>Manga</span></h2>
+        <div id="manga-list" class="list"></div>
+
     </div>
     <script src="main.js"></script>
 </body>
