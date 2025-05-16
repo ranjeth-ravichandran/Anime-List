@@ -1,36 +1,6 @@
-/* fetch('data/users.json')
-    .then(response => response.json())
-    .then(users => {
-        const userContainer = document.getElementById('userContainer');
-        const userInfo = document.getElementById('userInfo');
-
-        users.users.forEach(user => {
-            const userProfile = document.createElement('div');
-            userProfile.classList.add('user-profile');
-            userProfile.innerHTML = `
-                        <img src="https://via.placeholder.com/100" alt="User Avatar">
-                        <p>${user.username}</p>
-                    `;
-            userProfile.addEventListener('click', () => {
-                userInfo.style.display = 'block';
-                userInfo.innerHTML = `
-                            <h2>${user.username}</h2>
-                            <p><strong>Email:</strong> ${user.email}</p>
-                            <p><strong>Favorite Genres:</strong> ${user.favorite_genres.join(', ')}</p>
-                            <h3>Watchlist:</h3>
-                            <ul>
-                                ${user.watchlist.map(anime => `<li>${anime.title} - ${anime.status}</li>`).join('')}
-                            </ul>
-                        `;
-            });
-            userContainer.appendChild(userProfile);
-        });
-    })
-    .catch(error => console.error('Error loading users:', error)); */
 
 /* TODO: Fetching the Top 10 Anime  */
 /* GET https://api.jikan.moe/v4/top/anime?page=1&limit=10 */
-
 fetch("https://api.jikan.moe/v4/top/anime?page=1&limit=15")
     .then((response) => response.json())
     .then((json) => {
@@ -41,14 +11,12 @@ fetch("https://api.jikan.moe/v4/top/anime?page=1&limit=15")
         animeListData.map((anime) => {
 
             const animeList = document.getElementById('anime-list');
-            let animeContainer = document.createElement('div');
-            animeContainer.classList.add('anime');
-            animeList.appendChild(animeContainer)
-            animeContainer.innerHTML = `
-                <a href="${anime.url}">
-                    <img src="${anime.images.jpg.image_url}">
+
+            animeList.innerHTML += `
+                <a draggable="false" class="item" href="${anime.url}" >
+                    <img src="${anime.images.jpg.image_url}" draggable="false">
                 </a>
-            `
+            `;
         })
     });
 
@@ -65,13 +33,52 @@ fetch("https://api.jikan.moe/v4/top/manga?page=1&limit=15")
         mangaListData.map((manga) => {
 
             const mangaList = document.getElementById('manga-list');
-            let mangaContainer = document.createElement('div');
-            mangaContainer.classList.add('anime');
-            mangaList.appendChild(mangaContainer)
-            mangaContainer.innerHTML = `
-                <a href="${manga.url}">
-                    <img src="${manga.images.jpg.image_url}">
+
+            mangaList.innerHTML += `
+                <a draggable="false" class="item" href="${manga.url}" >
+                    <img src="${manga.images.jpg.image_url}" draggable="false">
                 </a>
-            `
+            `;
         })
     });
+
+
+
+/* SLIDER */
+document.querySelectorAll('.items').forEach(items => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let isDragging = false;
+
+    items.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false;
+        startX = e.pageX - items.offsetLeft;
+        scrollLeft = items.scrollLeft;
+    });
+
+    items.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    items.addEventListener('mouseup', () => {
+        isDown = false;
+        setTimeout(() => isDragging = false, 50);
+    });
+
+    items.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        isDragging = true;
+        const x = e.pageX - items.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        items.scrollLeft = scrollLeft - walk;
+    });
+
+    items.addEventListener('click', (e) => {
+        if (isDragging) {
+            e.preventDefault();
+        }
+    });
+});

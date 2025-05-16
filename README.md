@@ -20,3 +20,5 @@ By reading the documentation, to get the top recommended anime the GET request i
 ```
 https://api.jikan.moe/v4/top/anime?page=1&limit=10
 ```
+
+TODO: Use Swiper.js for sliders for ANIME and MANGA.

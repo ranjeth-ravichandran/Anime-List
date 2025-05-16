@@ -3,6 +3,8 @@
 :root {
     --header-font: "Chewy";
     --body-font: "Patrick Hand";
+
+    --bg-color: rgb(24, 26, 24);
 }
 
 * {
@@ -22,7 +24,7 @@ body {
     padding: 20px 0;
     align-items: center;
     position: relative;
-    background-color: rgb(24, 26, 24);
+    background-color: var(--bg-color);
     color: white;
 }
 
@@ -59,18 +61,33 @@ span {
     color: rgb(238, 153, 131);
 }
 
-.list {
-    width: inherit;
+.items {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    overflow-x: auto;
+    gap: 5px;
+    scrollbar-width: none;
+
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-.anime img {
-    width: 140px;
-    height: 200px;
+.item {
+    max-width: 140px;
+    cursor: pointer;
+    overflow: hidden;
     border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    flex-shrink: 0;
+    display: block;
+    max-height: 200px;
+}
+
+a {
+    text-decoration: none;
+    touch-action: manipulation;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
